@@ -13,6 +13,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/multi-word-component-names': 'off',
-    'vue/order-in-components': 'off'
+    'vue/order-in-components': 'off',
+    'no-console': 'off'
   },
 }
