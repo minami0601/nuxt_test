@@ -2,6 +2,10 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  router: {
+    middleware: 'middlewareCheck'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-test',
@@ -21,15 +25,24 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '@/plugins/dayjs'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  // components: {
+  //   dirs: [
+  //     '~/components',
+  //     '~/components/base'
+  //   ]
+  // },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@/modules/example'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
