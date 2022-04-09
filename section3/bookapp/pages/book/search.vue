@@ -44,7 +44,13 @@
               {{ book.description }}
               <v-spacer />
               <v-card-actions>
-                <v-btn class="mx-2" fab dark color="indigo">
+                <v-btn
+                  class="mx-2"
+                  fab
+                  dark
+                  color="indigo"
+                  @click="addBookList(index)"
+                >
                   <v-icon dark>
                     mdi-plus
                   </v-icon>
@@ -68,6 +74,9 @@ export default {
     }
   },
   methods: {
+    addBookList(index) {
+      this.$emit('add-book-list', this.searchResults[index])
+    },
     async search(keyword) {
       const baseUrl = 'https://www.googleapis.com/books/v1/volumes?'
       const params = {
